@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IconButton from '@material-ui/core/IconButton';
+import Fab from '@material-ui/core/Fab';
 import AdbIcon from '@material-ui/icons/Adb';
 
 import { toggleBot } from './actions';
@@ -13,9 +13,10 @@ const BotButton = ({classes}) => {
     toggleBot(dispatch);
   };
   
-  return (<IconButton onClick={onIconClicked} color="primary" aria-label="upload picture" component="span" className={classes.botButton}>
+  return (
+    <Fab color="primary" aria-label="add" onClick={onIconClicked} className={classes.botButton}>
       <AdbIcon />
-    </IconButton>
+    </Fab>
   );
 };
 
