@@ -35,8 +35,15 @@ export const useStyles = makeStyles((theme) => ({
   botDrawer: {
     width: '33pc',
   },
+  botFooter: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
+  },
+  inputMessage: {
+    width: '24pc',
   },
 }));
