@@ -46,4 +46,23 @@ export const useStyles = makeStyles((theme) => ({
   inputMessage: {
     width: '24pc',
   },
+  messageItem: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      display: 'flex',
+      margin: theme.spacing(1),
+      width: theme.spacing(50),
+      height: theme.spacing(5),
+    }
+  },
+  botMessage: {
+    justifyContent: 'flex-start',
+    backgroundColor: '#ccc'
+  },
+  userMessage: {
+    justifyContent: 'flex-end',
+    right: '1pc',
+  },
 }));
+
