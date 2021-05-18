@@ -26,6 +26,12 @@ export const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  botButton: {
+    display: 'flex',
+    position: 'fixed',
+    right: '2pc',
+    bottom: '1pc',
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),

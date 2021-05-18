@@ -6,6 +6,7 @@ import BlogAppBar from './BlogAppBar';
 import Banner from './Banner';
 import CardList from './CardList';
 import BlogFooter from './BlogFooter';
+import BotButton from './BotButton';
 
 import { useStyles } from './style';
 
@@ -21,6 +22,7 @@ function App() {
       </main>
       {/* Footer */}
       <BlogFooter classes={classes} />
+      <BotButton classes={classes} />
     </React.Fragment>
   );
 }
