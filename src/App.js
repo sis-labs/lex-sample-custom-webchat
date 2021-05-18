@@ -7,6 +7,7 @@ import Banner from './Banner';
 import CardList from './CardList';
 import BlogFooter from './BlogFooter';
 import BotButton from './BotButton';
+import BotDrawer from './BotDrawer';
 
 import { useStyles } from './style';
 
@@ -23,6 +24,7 @@ function App() {
       {/* Footer */}
       <BlogFooter classes={classes} />
       <BotButton classes={classes} />
+      <BotDrawer classes={classes} />
     </React.Fragment>
   );
 }
