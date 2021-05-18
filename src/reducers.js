@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, TOGGLE_BOT, SHOW_BOT, HIDE_BOT } from './actions';
+import { SEND_MESSAGE, HANDLE_MESSAGE, TOGGLE_BOT, SHOW_BOT, HIDE_BOT } from './actions';
 
 export const initialState = {
   messages: [],
@@ -8,9 +8,12 @@ export const initialState = {
 export const MessagingReducer = (initialState, {type, payload}) => {
   // TODO: handle the payload according to the action
   switch(type) {
+    case HANDLE_MESSAGE:
     case SEND_MESSAGE:
-      const { context: {messages} } = initialState;
+      const { messages } = initialState;
       const msgs = [...messages, payload];
+      console.log(payload);
+      console.log(msgs);
       return {
         ...initialState,
         messages: msgs,

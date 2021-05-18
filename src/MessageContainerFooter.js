@@ -5,11 +5,20 @@ import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import SendIcon from '@material-ui/icons/Send';
 
+import { USER } from './message-model';
+import { sendMessage } from './actions';
+import { useMessagingContext } from './MessagingContext';
+
 const MessageContainerFooter = ({ classes }) => {
+  const { dispatch } = useMessagingContext();
   const [message, setMessage] = useState('');
   
   const onTextChanged = (e) => {
     setMessage(e.target.value);
+  };
+  
+  const onSendMessage = () => {
+    sendMessage(dispatch, { content: message, ownerId: USER, ts: Date.now(), shown: false });
   };
   
   return (
@@ -25,7 +34,7 @@ const MessageContainerFooter = ({ classes }) => {
           }}
         />
       </FormControl>
-      <IconButton color="primary" aria-label="upload picture" component="span">
+      <IconButton onClick={onSendMessage} color="primary" aria-label="upload picture" component="span">
         <SendIcon />
       </IconButton>
     </footer>
