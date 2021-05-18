@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, TOGGLE_BOT } from './actions';
+import { SEND_MESSAGE, TOGGLE_BOT, SHOW_BOT, HIDE_BOT } from './actions';
 
 export const initialState = {
   messages: [],
@@ -20,6 +20,16 @@ export const MessagingReducer = (initialState, {type, payload}) => {
       return {
         ...initialState,
         botVisible: !botVisible,
+      }
+    case SHOW_BOT:
+      return {
+        ...initialState,
+        botVisible: true,
+      }
+    case HIDE_BOT:
+      return {
+        ...initialState,
+        botVisible: false,
       }
     default:
       throw new Error("Undefined error handler");
