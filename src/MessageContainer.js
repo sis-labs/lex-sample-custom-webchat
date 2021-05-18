@@ -4,11 +4,10 @@ import Grid from '@material-ui/core/Grid';
 
 import MessageItem from './MessageItem';
 
-import { BOT, USER } from './message-model';
 import { useMessagingContext } from './MessagingContext';
 
 const MessageContainer = ({ classes }) => {
-  const { dispatch, context: { messages } } = useMessagingContext();
+  const { context: { messages } } = useMessagingContext();
   const msgs = messages.map((m, i) => (
     <Grid key={i} className={classes.messageItem} item xs={12}>
       <MessageItem classes={classes} message={m} />

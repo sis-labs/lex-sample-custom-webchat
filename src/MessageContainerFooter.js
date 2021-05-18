@@ -17,8 +17,15 @@ const MessageContainerFooter = ({ classes }) => {
     setMessage(e.target.value);
   };
   
+  const onKeyPressed = (e) => {
+    if(e.key === 'Enter'){
+      onSendMessage();
+    }
+  };
+  
   const onSendMessage = () => {
     sendMessage(dispatch, { content: message, ownerId: USER, ts: Date.now(), shown: false });
+    setMessage('');
   };
   
   return (
@@ -28,10 +35,12 @@ const MessageContainerFooter = ({ classes }) => {
           id="chat-message"
           value={message}
           onChange={onTextChanged}
+          onKeyPress={onKeyPressed}
           aria-describedby="standard-weight-helper-text"
           inputProps={{
             'aria-label': 'weight',
           }}
+          autoFocus
         />
       </FormControl>
       <IconButton onClick={onSendMessage} color="primary" aria-label="upload picture" component="span">

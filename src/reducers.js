@@ -12,8 +12,6 @@ export const MessagingReducer = (initialState, {type, payload}) => {
     case SEND_MESSAGE:
       const { messages } = initialState;
       const msgs = [...messages, payload];
-      console.log(payload);
-      console.log(msgs);
       return {
         ...initialState,
         messages: msgs,
